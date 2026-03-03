@@ -1,74 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Watchdogs Automation</title>
-  <meta name="description" content="Watchdogs Automation — PLC, HMI/SCADA, commissioning, and industrial integration." />
 
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Auto redirect after 2.5 seconds -->
+  <meta http-equiv="refresh" content="2.5; url=home.html">
 
   <style>
-    body { font-family: 'Manrope', sans-serif; }
+    body {
+      margin: 0;
+      background-color: #FF6D05;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: sans-serif;
+    }
+
+    img {
+      max-width: 400px;
+      height: auto;
+    }
   </style>
 </head>
+<body>
 
-<body class="min-h-screen text-white">
-  <!-- Background -->
-  <div class="fixed inset-0 -z-10 bg-cover bg-center"
-       style="background-image:url('./assets/images/WatchdogsBG.png');"></div>
+  <img src="./assets/images/WatchdogAutomationHeader.png" alt="Watchdogs Automation Logo">
 
-  <!-- Dark overlay for readability -->
-  <div class="fixed inset-0 -z-10 bg-slate-950/75"></div>
-
-  <!-- Splash content -->
-  <main class="min-h-screen flex items-center">
-    <div class="mx-auto max-w-7xl px-6 py-16 w-full">
-      <div class="max-w-3xl">
-        <!-- Optional small logo -->
-        <img src="./assets/images/WALogoOutlined.png?v=1"
-             alt="Watchdogs Automation Logo"
-             class="h-[64px] w-auto object-contain" />
-
-        <!-- Your header image (transparent) -->
-        <h1 class="sr-only">Watchdogs Automation</h1>
-        <img src="./assets/images/WatchdogAutomationHeader.png"
-             alt="Watchdogs Automation"
-             class="mt-6 w-full max-w-2xl h-auto" />
-
-        <p class="mt-6 text-lg sm:text-xl text-slate-200 max-w-2xl italic">
-          You Imagine, We Integrate
-        </p>
-
-        <p class="mt-4 text-slate-300 max-w-2xl">
-          PLC programming, HMI/SCADA integration, commissioning support, and industrial control systems services.
-        </p>
-
-        <div class="mt-8 flex flex-col sm:flex-row gap-3">
-          <a href="./home.html"
-             class="inline-flex items-center justify-center rounded-xl bg-[#FF6D05] px-6 py-3 text-sm font-semibold text-white hover:bg-[#e65f00] transition-colors">
-            Enter Website
-          </a>
-
-          <a href="mailto:info@watchdogsautomation.com"
-             class="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors">
-            Email Us
-          </a>
-        </div>
-
-        <div class="mt-10 text-xs text-slate-400">
-          © <span id="year"></span> Watchdogs Automation • PLC Systems Technik Inc.
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
