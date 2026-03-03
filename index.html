@@ -1,33 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Watchdogs Automation</title>
 
-  <!-- Auto redirect after 2.5 seconds -->
-  <meta http-equiv="refresh" content="2.5; url=home.html">
-
   <style>
-    body {
-      margin: 0;
-      background-color: #FF6D05;
+    body { margin: 0; }
+
+    #splash {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
       display: flex;
-      justify-content: center;
       align-items: center;
-      height: 100vh;
-      font-family: sans-serif;
+      justify-content: center;
+      background: #FF6D05;
     }
 
-    img {
-      max-width: 400px;
+    #splash img {
+      width: min(520px, 85vw);
       height: auto;
     }
   </style>
 </head>
+
 <body>
+  <div id="splash">
+    <img src="./assets/images/WatchdogAutomationHeader.png"
+         alt="Watchdogs Automation" />
+  </div>
 
-  <img src="./assets/images/WatchdogAutomationHeader.png" alt="Watchdogs Automation Logo">
+  <script>
+    (function () {
+      const MIN_MS = 2200;        // splash duration
+      const TARGET_URL = "home.html";
 
+      const splash = document.getElementById("splash");
+      const start = performance.now();
+
+      function go() {
+        const elapsed = performance.now() - start;
+        const remaining = Math.max(0, MIN_MS - elapsed);
+
+        setTimeout(() => {
+          // fade
+          splash.style.transition = "opacity 300ms ease";
+          splash.style.opacity = "0";
+
+          // redirect after fade
+          setTimeout(() => {
+            window.location.href = TARGET_URL;
+          }, 320);
+        }, remaining);
+      }
+
+      // start timing immediately (doesn't depend on load speed)
+      go();
+
+      // if browser restores from back/forward cache, force a fresh run
+      window.addEventListener("pageshow", (e) => {
+        if (e.persisted) window.location.reload();
+      });
+    })();
+  </script>
 </body>
 </html>
