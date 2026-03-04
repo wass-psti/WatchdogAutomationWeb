@@ -19,6 +19,31 @@
   h1{font-family: 'Manrope', sans-serif;}
   body{font-family: 'Manrope', sans-serif;}
 
+  /* Simple 3-dot loader */
+.wa-dots {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.wa-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.95);
+  opacity: 0.35;
+  animation: waDot 900ms ease-in-out infinite;
+}
+
+.wa-dots span:nth-child(2) { animation-delay: 150ms; }
+.wa-dots span:nth-child(3) { animation-delay: 300ms; }
+
+@keyframes waDot {
+  0%, 100% { transform: translateY(0); opacity: 0.35; }
+  50%      { transform: translateY(-4px); opacity: 1; }
+}
+
   /* Splash loading animation */
   .wa-spinner{
     width:34px;
