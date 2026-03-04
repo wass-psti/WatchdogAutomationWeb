@@ -42,19 +42,154 @@
     50%  { opacity:1; }
     100% { transform: translateX(260%); opacity:0.35; }
   }
-</style>
+    
+  /* --- Splash industrial theme add-ons --- */  
+  .wa-splash-wrap{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:14px;
+    padding:24px;
+    width:min(760px,92vw);
+  }
+
+  .wa-splash-logo{
+    width:min(520px,85vw);
+    height:auto;
+    filter: drop-shadow(0 10px 25px rgba(0,0,0,0.18));
+  }
+
+  /* "Electrical current" scan line */
+  .wa-current{
+    position:relative;
+    width:min(560px,88vw);
+    height:10px;
+    border-radius:999px;
+    background: rgba(255,255,255,0.18);
+    overflow:hidden;
+  }
+  .wa-current::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background: repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,0.15) 0px,
+      rgba(255,255,255,0.15) 8px,
+      rgba(255,255,255,0.00) 8px,
+      rgba(255,255,255,0.00) 16px
+    );
+    opacity:0.9;
+  }
+  .wa-current-glow{
+    position:absolute;
+    top:0; bottom:0;
+    width:22%;
+    border-radius:999px;
+    background: linear-gradient(90deg,
+      rgba(255,255,255,0.0),
+      rgba(255,255,255,0.95),
+      rgba(255,255,255,0.0)
+    );
+    animation: waCurrent 0.95s ease-in-out infinite;
+    filter: blur(0.2px);
+  }
+  @keyframes waCurrent{
+    0%   { transform: translateX(-140%); opacity:0.35; }
+    50%  { opacity:1; }
+    100% { transform: translateX(520%); opacity:0.35; }
+  }
+
+  /* PLC boot log */
+  .wa-boot{
+    width:min(560px,88vw);
+    border-radius:14px;
+    padding:12px 14px;
+    background: rgba(0,0,0,0.18);
+    backdrop-filter: blur(6px);
+    color: rgba(255,255,255,0.92);
+  }
+  .wa-boot-title{
+    font-size:12px;
+    letter-spacing:0.14em;
+    font-weight:800;
+    opacity:0.9;
+  }
+  .wa-boot-line{
+    margin-top:8px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:14px;
+    letter-spacing:0.02em;
+  }
+  .wa-boot-dot{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 0 14px rgba(255,255,255,0.9);
+    animation: waPulse 0.9s ease-in-out infinite;
+  }
+  @keyframes waPulse{
+    0%,100%{ transform: scale(0.85); opacity:0.6; }
+    50%{ transform: scale(1.15); opacity:1; }
+  }
+
+  /* Keep your spinner/bar but style wrapper */
+  .wa-bar-shell{
+    width:min(520px,85vw);
+    height:8px;
+    background: rgba(255,255,255,0.25);
+    border-radius:999px;
+    overflow:hidden;
+  }
+
+  .wa-loading{
+    color: rgba(255,255,255,0.92);
+    font-size: 13px;
+    letter-spacing: 0.10em;
+  }
+  </style>
 </head>
 
 <body class="bg-white text-slate-900">
+  
 <!-- Splash -->
 <div id="splash" style="
   position:fixed; inset:0; z-index:9999;
   display:flex; align-items:center; justify-content:center;
   background:#FF6D05;">
-  <div style="display:flex; flex-direction:column; align-items:center; gap:16px; padding:24px; width:min(720px,92vw);">
+  
+  <div class="wa-splash-wrap">
     <img src="./assets/images/WASplash.png"
          alt="Watchdog Automation"
-         style="width:min(520px,85vw); height:auto;" />
+         class="wa-splash-logo" />
+
+    <!-- "Electrical current" scanning line -->
+    <div class="wa-current">
+      <div class="wa-current-glow"></div>
+    </div>
+
+    <!-- PLC Boot log -->
+    <div class="wa-boot" aria-live="polite">
+      <div class="wa-boot-title">PLC BOOT SEQUENCE</div>
+      <div class="wa-boot-line">
+        <span class="wa-boot-dot"></span>
+        <span id="waBootText">Initializing…</span>
+      </div>
+    </div>
+
+    <!-- Spinner + bar (kept) -->
+    <div class="wa-spinner" aria-label="Loading"></div>
+
+    <div class="wa-bar-shell">
+      <div class="wa-bar"></div>
+    </div>
+
+    <div class="wa-loading">Loading…</div>
+  </div>
+</div>
 
     <!-- Spinner -->
     <div class="wa-spinner" aria-label="Loading"></div>
@@ -417,12 +552,33 @@
     </div>
   </footer>
 
-  <script>
+ <script>
 (function () {
-  const MIN_MS = 2200; // increase if you want longer (e.g., 2800)
-
+  const MIN_MS = 2400; // a bit longer so the PLC boot text feels intentional
   const splash = document.getElementById("splash");
   if (!splash) return;
+
+  const bootEl = document.getElementById("waBootText");
+  const steps = [
+    "Initializing CPU & memory map…",
+    "Scanning digital inputs (DI)…",
+    "Energizing output checks (DO)…",
+    "Loading analog scaling (AI/AO)…",
+    "Establishing OPC/SCADA handshake…",
+    "Verifying interlocks & permissives…",
+    "Finalizing commissioning-ready state…"
+  ];
+
+  // Cycle boot messages while splash is visible
+  let idx = 0;
+  let bootTimer = null;
+  if (bootEl) {
+    bootEl.textContent = steps[0];
+    bootTimer = setInterval(() => {
+      idx = (idx + 1) % steps.length;
+      bootEl.textContent = steps[idx];
+    }, 420);
+  }
 
   const start = performance.now();
 
@@ -431,16 +587,26 @@
     const remaining = Math.max(0, MIN_MS - elapsed);
 
     setTimeout(() => {
-      splash.style.transition = "opacity 300ms ease";
+      if (bootTimer) clearInterval(bootTimer);
+
+      splash.style.transition = "opacity 450ms ease";
       splash.style.opacity = "0";
-      setTimeout(() => splash.remove(), 320);
+      setTimeout(() => splash.remove(), 480);
     }, remaining);
   }
 
-  // Don’t wait for load (fast machines skip it). Start immediately:
+  // Start immediately (best for fast machines)
   hideSplash();
 
-  // If page comes from bfcache, force showing splash again:
+  // Hard fallback: never let splash get stuck
+  setTimeout(() => {
+    if (document.getElementById("splash")) {
+      if (bootTimer) clearInterval(bootTimer);
+      splash.remove();
+    }
+  }, 9000);
+
+  // If page comes from bfcache, show splash again reliably
   window.addEventListener("pageshow", (e) => {
     if (e.persisted) window.location.reload();
   });
