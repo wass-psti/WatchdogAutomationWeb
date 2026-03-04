@@ -377,9 +377,9 @@
   <div class="wa-orb wa-orb-2"></div>
 
   <div class="wa-splash-wrap">
-    <div class="wa-glitch" data-text="WATCHDOG AUTOMATION SYSTEMS">WELCOME TO THE OFFICIAL WEBSITE OF</div>
+    <div class="wa-glitch" data-text="WATCHDOG AUTOMATION SYSTEMS">WATCHDOG AUTOMATION SYSTEMS</div>
 
-    <img src="./assets/images/WASplashLogo.png" alt="Watchdog Automation" class="wa-splash-logo" />
+    <img src="./assets/images/WASplash.png" alt="Watchdog Automation" class="wa-splash-logo" />
 
     <div class="wa-boot" aria-live="polite">
       <div class="wa-boot-title">// PLC Boot Sequence Initiated</div>
@@ -429,7 +429,7 @@
       <span>Industrial Automation • PLC • HMI/SCADA • Commissioning</span>
     </div>
     <div class="flex items-center gap-4">
-      <a class="hover:text-white" href="mailto:info@watchdogsautomation.com">info@watchdogsautomation.com</a>
+      <a class="hover:text-white" href="/cdn-cgi/l/email-protection#167f78707956617762757e72797165776362797b77627f79783875797b"><span class="__cf_email__" data-cfemail="2d44434b426d5a4c594e4549424a5e4c585942404c59444243034e4240">[email&#160;protected]</span></a>
       <span class="text-slate-500">|</span>
       <a class="hover:text-white" href="tel:+639178883003">+63 917 888 3003</a>
     </div>
@@ -463,7 +463,7 @@
 <!-- ═══════════════════ HERO ═══════════════════ -->
 <section id="hero"
   class="relative overflow-hidden bg-cover bg-center bg-no-repeat"
-  style="background-image: url('./assets/images/WAHeroBGSuwayan.png');">
+  style="background-image: url('./assets/images/HeroBackground2.png');">
   <div class="absolute inset-0 -z-10">
     <div class="absolute -top-24 -right-24 h-80 w-80 rounded-full bg-emerald-200 blur-3xl opacity-50"></div>
     <div class="absolute top-40 -left-20 h-72 w-72 rounded-full bg-sky-200 blur-3xl opacity-50"></div>
@@ -473,11 +473,11 @@
     <div class="max-w-4xl">
       <h1 class="sr-only">Watchdog Automation</h1>
 
-    <!--  <img
+      <img
         src="./assets/images/WALogoOutlined.png"
         alt="Watchdog Automation"
-        class="w-8 max-w-3xl h-8"
-      /> -->
+        class="w-full max-w-3xl h-auto"
+      /> 
 
       <p class="mt-6 text-lg text-slate-700 max-w-3xl italic">
         Engineering Precision in Industrial Automation
@@ -660,30 +660,38 @@
 </section>
 
 <!-- ═══════════════════ PARTNERSHIPS ═══════════════════ -->
-<section id="partnerships" class="border-t border-slate-200">
-  <div class="mx-auto max-w-7xl px-4 py-14">
+<section id="partnerships" class="border-t border-slate-200 overflow-hidden">
+  <div class="mx-auto max-w-7xl px-4 pt-14 pb-6">
     <h2 class="text-3xl font-extrabold tracking-tight">Partnerships</h2>
+    <p class="mt-2 text-slate-500 text-sm">Trusted brands we work with</p>
+  </div>
 
-    <div class="mt-6 flex flex-wrap gap-4">
-
-      <!-- ALL PARTNERS LOGOS  -->
-      <div class="rounded-3xl border p-6 flex items-center justify-center">
-        <img src="./assets/images/WAPartners.png" alt="Partners" class="h-16 w-auto object-contain" />
-      </div>
-
-      <!-- PARTNER 2: DANFOSS -->
-      <!--<div class="rounded-3xl border p-6 flex items-center justify-center">
-        <img src="./assets/images/Danfoss.png" alt="Danfoss" class="h-10 w-auto object-contain" />
-      </div>-->
-
-      <!-- PARTNER 3: ENDRESS+HAUSER -->
-      <!--<div class="rounded-3xl border p-6 flex items-center justify-center">
-        <img src="./assets/images/EndressHauser.png" alt="Endress+Hauser" class="h-10 w-auto object-contain" />
-      </div>-->
-
+  <!-- Marquee track -->
+  <div class="relative w-full overflow-hidden pb-14" style="mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%); -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);">
+    <div class="wa-marquee-track flex items-center gap-16">
+      <!-- Set 1 -->
+      <img src="./assets/images/WAPartners.png" alt="Our Partners" class="h-20 w-auto object-contain flex-shrink-0" />
+      <!-- Set 2 (duplicate for seamless loop) -->
+      <img src="./assets/images/WAPartners.png" alt="Our Partners" class="h-20 w-auto object-contain flex-shrink-0" aria-hidden="true" />
+      <!-- Set 3 (extra duplicate for wider screens) -->
+      <img src="./assets/images/WAPartners.png" alt="Our Partners" class="h-20 w-auto object-contain flex-shrink-0" aria-hidden="true" />
     </div>
   </div>
 </section>
+
+<style>
+.wa-marquee-track {
+  width: max-content;
+  animation: waMarquee 18s linear infinite;
+}
+.wa-marquee-track:hover {
+  animation-play-state: paused;
+}
+@keyframes waMarquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+</style>
 
 <!-- ═══════════════════ EXAMPLE PROJECTS ═══════════════════ -->
 <section id="projects" class="border-t border-slate-200 bg-slate-50">
@@ -752,7 +760,7 @@
         Send a brief description, your location, and any relevant drawings/I/O list. We'll reply with clarifying questions and next steps.
       </p>
       <div class="mt-6 grid gap-3 text-sm text-slate-300">
-        <div><span class="font-semibold text-white">Email:</span> <a class="underline hover:text-white" href="mailto:info@watchdogsautomation.com">info@watchdogsautomation.com</a></div>
+        <div><span class="font-semibold text-white">Email:</span> <a class="underline hover:text-white" href="/cdn-cgi/l/email-protection#0861666e67487f697c6b606c676f7b697d7c6765697c616766266b6765"><span class="__cf_email__" data-cfemail="472e29212807302633242f23282034263233282a26332e28296924282a">[email&#160;protected]</span></a></div>
         <div><span class="font-semibold text-white">Phone:</span> <a class="underline hover:text-white" href="tel:+639178883003">+63 917 888 3003</a></div>
         <div><span class="font-semibold text-white">Location:</span> Lapu-Lapu / Cebu</div>
       </div>
@@ -797,7 +805,7 @@
 </footer>
 
 <!-- ═══════════════════ SCRIPTS ═══════════════════ -->
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 document.getElementById('year').textContent = new Date().getFullYear();
 
 (function () {
@@ -832,25 +840,4 @@ document.getElementById('year').textContent = new Date().getFullYear();
     const remaining = Math.max(0, MIN_MS - elapsed);
     setTimeout(() => {
       if (bootTimer) clearInterval(bootTimer);
-      splash.style.transition = "opacity 500ms ease";
-      splash.style.opacity = "0";
-      setTimeout(() => splash.remove(), 530);
-    }, remaining);
-  }
-
-  hideSplash();
-
-  setTimeout(() => {
-    if (document.getElementById("splash")) {
-      if (bootTimer) clearInterval(bootTimer);
-      splash.remove();
-    }
-  }, 9000);
-
-  window.addEventListener("pageshow", (e) => {
-    if (e.persisted) window.location.reload();
-  });
-})();
-</script>
-</body>
-</html>
+      splash.style.transition = "opacity 500ms e
