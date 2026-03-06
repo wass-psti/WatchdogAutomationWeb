@@ -635,15 +635,23 @@
   });
 </script>
 
-<!-- ═══════════════════ HERO ═══════════════════ -->
-<section id="hero"
-  class="relative overflow-hidden bg-cover bg-center bg-no-repeat"
-  style="background-image: url('./assets/images/WAHeroBGSuwayan.png');">
-  <div class="absolute inset-0 -z-10">
-    <div class="absolute -top-24 -right-24 h-80 w-80 rounded-full bg-emerald-200 blur-3xl opacity-50"></div>
-    <div class="absolute top-40 -left-20 h-72 w-72 rounded-full bg-sky-200 blur-3xl opacity-50"></div>
-  </div>
+<!-- ═══════════════════ ENDHEADER // HERO ═══════════════════ -->
+<section id="hero" class="relative overflow-hidden">
 
+   <!-- Background Video -->
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    class="absolute inset-0 w-full h-full object-cover -z-10"
+    poster="./assets/images/WAHeroBGSuwayan.png">
+    <source src="./assets/videos/WAHeroVideo.mp4" type="video/mp4" />
+  </video>
+
+  <!-- Dark overlay for text legibility -->
+  <div class="absolute inset-0 bg-black/50 -z-10"></div>
+  
   <div class="mx-auto max-w-7xl px-4 py-14 sm:py-20">
     <div class="max-w-4xl">
       <h1 class="font-extrabold italic text-4xl sm:text-4xl text-white leading-tight">You imagine, we integrate.</h1>
