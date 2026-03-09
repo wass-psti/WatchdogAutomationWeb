@@ -1211,6 +1211,13 @@ document.getElementById('year').textContent = new Date().getFullYear();
   const splash = document.getElementById("splash");
   if (!splash) return;
 
+  // If already seen this session, skip splash immediately
+  if (sessionStorage.getItem('splashSeen')) {
+    splash.remove();
+    return;
+  }
+  sessionStorage.setItem('splashSeen', 'true');
+
   const bootEl = document.getElementById("waBootText");
   const steps = [
     "Initializing CPU & memory map…",
