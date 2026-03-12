@@ -1785,6 +1785,7 @@
               
               <!-- formsubmit form integration -->
               <form
+                  id="contactForm"
                   action="https://formsubmit.co/info@watchdogautomation.com"
                   method="POST"
                   class="mt-5 grid gap-3"
@@ -1795,7 +1796,7 @@
                 <input type="hidden" name="_subject" id="subjectField">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_template" value="table">
-                <input type="hidden" name="_replyto" value="email">
+                <!--<input type="hidden" name="_replyto" value="email">-->
                 
                 <!-- formsubmit name integration  -->
                 <label class="grid gap-1">
@@ -1813,7 +1814,10 @@
                   <span class="text-sm font-semibold">Email</span>
                   <input
                     type="email"
-                    name="email" id="from_email"
+                    name="email"
+                    id="from_email"
+                    class="rounded-xl border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-900"
+                    placeholder="you@company.com"
                     required
                   />
                 </label>
@@ -1843,7 +1847,14 @@
                 <!-- formsubmit message integration  -->
                 <label class="grid gap-1">
                   <span class="text-sm font-semibold">Message</span>
-                  <textarea name="message" required></textarea>
+                  <textarea
+                    name="message"
+                    id="message"
+                    rows="4"
+                    class="rounded-xl border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-900"
+                    placeholder="Brief scope: PLC brand, I/O count, issue description, timeline..."
+                    required>                     
+                  </textarea>
                 </label>
                 <!-- end of formsubmit message integration  -->
 
@@ -2082,16 +2093,14 @@
         <!-- ═══════════════════ SCRIPTS ═══════════════════ -->
         <!-- FormSubmit script -->
         <script>
-            document.querySelector("form").addEventListener("submit", function () {
-            
-              const name = document.getElementById("from_name").value;
-              const email = document.getElementById("from_email").value;
-              const inquiry = document.getElementById("inquiry_type").value;
-            
-              const subject =
-                "[" + inquiry + "] - " + name + " - " + email;
-            
-              document.getElementById("subjectField").value = subject;});
+          document.getElementById("contactForm").addEventListener("submit", function () {
+            const name = document.getElementById("from_name").value.trim();
+            const email = document.getElementById("from_email").value.trim();
+            const inquiry = document.getElementById("inquiry_type").value;
+        
+            document.getElementById("subjectField").value =
+              "[" + inquiry + "] - " + name + " - " + email;
+          });
         </script>
         <!-- FormSubmit script -->
         <script>
