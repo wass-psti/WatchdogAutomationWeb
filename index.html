@@ -1314,14 +1314,18 @@
     border-top: 1px solid #1e293b;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 767px) {
     .proj-item {
       flex-direction: row;
       gap: 5rem;
-      padding: 5rem 0;
+      padding: 2.5rem 0;
     }
     .proj-item.reverse {
       flex-direction: row-reverse;
+    }
+    .proj-item-img,
+    .proj-item-img-placeholder {
+      height: 200px;
     }
   }
 
@@ -1349,6 +1353,7 @@
 
     /* Accent bar on the left by default */
     border-left: 3px solid #009a9b;
+    border-right: none !important;
   }
 
   /* Reversed rows: accent bar on the right */
@@ -1400,7 +1405,7 @@
   }
 
   .proj-item-title {
-    font-size: 1.5rem;
+    font-size: 1.15rem;
     font-weight: 800;
     line-height: 1.2;
     color: #0f172a;
@@ -1423,7 +1428,7 @@
     font-size: 0.875rem;
     color: #475569;
     line-height: 1.8;
-    max-width: 46ch;
+    max-width: 100%;
     margin-bottom: 2rem;
   }
 
@@ -1472,7 +1477,7 @@
 </style>
 
 <section id="projects" class="bg-white">
-  <div class="mx-auto max-w-6xl px-6 py-12">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-12">
 
     <!-- Section Header -->
     <div class="mb-0">
@@ -1506,7 +1511,8 @@
 
     <!-- PROJECT 2 — image right -->
     <a href="./projects/project2.html" class="proj-item reverse" style="text-decoration:none">
-      <div class="proj-item-img-wrap">
+      <div class="proj-item-img-wrap">@media
+        
         <img src="./assets/images/DePal.JPG" class="proj-item-img"
           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
         <div class="proj-item-img-placeholder" style="display:none">
