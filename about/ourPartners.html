@@ -171,14 +171,20 @@
   <div class="py-16 border-b border-stone-200">
     <p class="section-tag mb-8 text-center text-[#1A9671] text-lg">Our Partners</p>
     <div class="relative w-full overflow-hidden" style="mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%); -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);">
-      <div class="wa-marquee-track flex items-center gap-16">
+      <div class="flex items-center gap-16" style="width: max-content; animation: waMarquee 40s linear infinite;">
         <img src="../assets/images/WAPartners.png" alt="Our Partners" class="h-16 w-auto object-contain flex-shrink-0" />
         <img src="../assets/images/WAPartners.png" alt="Our Partners" class="h-16 w-auto object-contain flex-shrink-0" aria-hidden="true"/>
         <img src="../assets/images/WAPartners.png" alt="Our Partners" class="h-16 w-auto object-contain flex-shrink-0" aria-hidden="true"/>
       </div>
     </div>
-    <style>.wa-marquee-track{{width:max-content;animation:waMarquee 40s linear infinite;}}@keyframes waMarquee{{0%{{transform:translateX(0);}}100%{{transform:translateX(-33.333%);}}}}</style>
   </div>
+
+  <style>
+    @keyframes waMarquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-33.333%); }
+    }
+  </style>
 
   <!-- PLC & Automation -->
   <div class="grid lg:grid-cols-2 gap-16 items-center py-16 border-b border-stone-200">
