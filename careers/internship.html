@@ -1,1 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Internship / On-the-Job Training | Watchdog Automation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    html, body { font-family: 'Manrope', sans-serif; overflow-x: hidden; background: #fdfaf7; }
+    .scroll-fade { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .scroll-fade.visible { opacity: 1; transform: translateY(0); }
+    .scroll-fade.delay-1 { transition-delay: 0.1s; }
+    .scroll-fade.delay-2 { transition-delay: 0.2s; }
+    .scroll-fade.delay-3 { transition-delay: 0.3s; }
+    .fade-up { opacity: 0; transform: translateY(24px); animation: fadeUp 0.7s ease forwards; }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+    .delay-i1 { animation-delay: 0.1s; }
+    .delay-i2 { animation-delay: 0.2s; }
+    .group:hover .nav-arrow { transform: rotate(180deg); }
+    .section-tag { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; color: #c9622a; }
+  </style>
+</head>
+<body class="text-slate-800">
 
+<!-- HEADER -->
+<header class="fixed top-0 z-50 left-0 right-0 bg-[#000000]">
+  <div class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-1 mr-auto">
+      <button id="mobileMenuBtn" class="md:hidden p-2 text-white" aria-label="Open menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <a href="../index.html" class="flex items-center shrink-0">
+        <img src="../assets/images/WAWithoutText2.png?v=1" alt="Watchdog Logo" class="h-8 md:h-12 w-auto object-contain"/>
+        <img src="../assets/images/WANeutral2.png?v=1" alt="Watchdog Text" class="h-8 md:h-12 w-auto object-contain"/>
+      </a>
+    </div>
+    <nav class="hidden md:flex items-center gap-1 text-sm font-semibold">
+      <div class="relative group">
+        <button class="flex items-center gap-1 px-4 py-2 text-white hover:text-slate-300">About Us<svg class="nav-arrow w-4 h-4 mt-0.5 transition-transform duration-200" fill="currentColor" viewBox="0 0 20 20"><path d="M5 7l5 5 5-5H5z"/></svg></button>
+        <div class="absolute top-full left-0 mt-1 w-52 bg-white rounded-xl shadow-xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+          <div class="h-0.5 bg-[#ac0505] rounded-t-xl"></div>
+          <ul class="py-2">
+            <li><a href="../about/ourStory.html" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">Our Story</a></li>
+            <li><a href="../about/howWeWork.html" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">How We Work</a></li>
+            <li><a href="../about/ourPartners.html" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">Our Partners</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="relative group">
+        <button class="flex items-center gap-1 px-4 py-2 text-white hover:text-slate-300">Projects<svg class="nav-arrow w-4 h-4 mt-0.5 transition-transform duration-200" fill="currentColor" viewBox="0 0 20 20"><path d="M5 7l5 5 5-5H5z"/></svg></button>
+        <div class="absolute top-full left-0 mt-1 w-56 bg-white rounded-xl shadow-xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+          <div class="h-0.5 bg-[#ac0505] rounded-t-xl"></div>
+          <ul class="py-2">
+            <li><a href="../index.html#projects" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">Featured Projects</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="relative group">
+        <button class="flex items-center gap-1 px-4 py-2 text-white hover:text-slate-300">Careers<svg class="nav-arrow w-4 h-4 mt-0.5 transition-transform duration-200" fill="currentColor" viewBox="0 0 20 20"><path d="M5 7l5 5 5-5H5z"/></svg></button>
+        <div class="absolute top-full left-0 mt-1 w-64 bg-white rounded-xl shadow-xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+          <div class="h-0.5 bg-[#ac0505] rounded-t-xl"></div>
+          <ul class="py-2">
+            <li><a href="./internship.html" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">Internship / On-the-Job Training</a></li>
+            <li><a href="./engineering.html" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">Engineering</a></li>
+            <li><a href="./finance.html" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">Finance</a></li>
+            <li><a href="./marketing.html" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">Marketing</a></li>
+            <li><a href="./management.html" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">Management</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="flex justify-end">
+      <a href="../index.html#contact" class="hidden md:inline-flex items-center justify-center rounded-md bg-[#ac0505] px-4 py-2 text-sm font-semibold text-white hover:bg-[#8b0000] transition-colors">Contact Us</a>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE DRAWER -->
+<div id="drawerOverlay" class="fixed inset-0 bg-black/60 z-[998] hidden md:hidden" aria-hidden="true"></div>
+<div id="mobileDrawer" class="fixed top-0 left-0 h-full w-72 bg-[#111] z-[999] transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col">
+  <div class="flex items-center justify-between px-5 py-4 border-b border-white/10">
+    <div class="flex items-center gap-2">
+      <img src="../assets/images/WAWithoutText2.png?v=1" alt="Logo" class="h-8 w-auto"/>
+      <img src="../assets/images/WANeutral2.png?v=1" alt="Watchdog" class="h-8 w-auto"/>
+    </div>
+    <button id="drawerCloseBtn" class="text-white/60 hover:text-white p-1">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <nav class="flex-1 overflow-y-auto py-4 px-3">
+    <a href="../index.html" class="drawer-link flex items-center gap-4 px-3 py-3 rounded-lg text-white/80 hover:bg-white/10 hover:text-white transition-colors">
+      <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span class="font-semibold text-sm">Home</span>
+    </a>
+    <div class="drawer-accordion">
+      <button class="drawer-acc-btn flex items-center justify-between w-full px-3 py-3 rounded-lg text-white/80 hover:bg-white/10 hover:text-white transition-colors">
+        <div class="flex items-center gap-4">
+          <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 3H8a2 2 0 0 0-2 2v2h12V5a2 2 0 0 0-2-2z"/></svg>
+          <span class="font-semibold text-sm">Careers</span>
+        </div>
+        <svg class="acc-chevron w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+      </button>
+      <div class="drawer-acc-panel hidden pl-12 pb-1">
+        <a href="./internship.html" class="drawer-link block py-2 text-sm text-white/60 hover:text-white">Internship / OJT</a>
+        <a href="./engineering.html" class="drawer-link block py-2 text-sm text-white/60 hover:text-white">Engineering</a>
+        <a href="./finance.html" class="drawer-link block py-2 text-sm text-white/60 hover:text-white">Finance</a>
+        <a href="./marketing.html" class="drawer-link block py-2 text-sm text-white/60 hover:text-white">Marketing</a>
+        <a href="./management.html" class="drawer-link block py-2 text-sm text-white/60 hover:text-white">Management</a>
+      </div>
+    </div>
+  </nav>
+  <a href="../index.html#contact" class="drawer-link flex items-center justify-center w-full rounded-md bg-[#ac0505] px-4 py-3 text-sm font-semibold text-white hover:bg-[#8b0000] transition-colors m-3 w-auto">Contact Us</a>
+</div>
+<script>
+  const menuBtn = document.getElementById('mobileMenuBtn');
+  const closeBtn = document.getElementById('drawerCloseBtn');
+  const drawer = document.getElementById('mobileDrawer');
+  const overlay = document.getElementById('drawerOverlay');
+  function openDrawer() { drawer.classList.remove('-translate-x-full'); overlay.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
+  function closeDrawer() { drawer.classList.add('-translate-x-full'); overlay.classList.add('hidden'); document.body.style.overflow = ''; }
+  menuBtn.addEventListener('click', openDrawer);
+  closeBtn.addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', closeDrawer);
+  drawer.querySelectorAll('.drawer-link').forEach(l => l.addEventListener('click', closeDrawer));
+  drawer.querySelectorAll('.drawer-acc-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const panel = btn.nextElementSibling;
+      const chevron = btn.querySelector('.acc-chevron');
+      panel.classList.toggle('hidden');
+      chevron.style.transform = panel.classList.contains('hidden') ? '' : 'rotate(180deg)';
+    });
+  });
+</script>
+
+<!-- PAGE INTRO -->
+<div class="mx-auto max-w-7xl px-6 pt-32 pb-8">
+  <p class="fade-up section-tag mb-3 text-[#D13226]">Careers</p>
+  <h1 class="fade-up delay-i1 text-5xl md:text-6xl font-extrabold text-[#18B59E] leading-tight">Internship / OJT</h1>
+  <div class="fade-up delay-i2 mt-6 w-24" style="border-top: 2px solid #D13226;"></div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="mx-auto max-w-7xl px-6 pb-20">
+
+  <!-- Hero Row -->
+  <div class="grid lg:grid-cols-2 gap-16 items-center py-16 border-b border-stone-200">
+    <div class="scroll-fade">
+      <p class="section-tag mb-4 text-[#D13226]">Internship / On-the-Job Training</p>
+      <h2 class="text-3xl font-extrabold text-slate-900 leading-snug mb-5">Start your engineering career with real-world experience.</h2>
+      <p class="text-slate-600 leading-relaxed text-lg">Our OJT program gives students hands-on exposure to industrial automation — from PLC programming to site commissioning. You won't be filing papers; you'll be working alongside our engineers on actual projects.</p>
+      <a href="../index.html#contact" class="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#ac0505] px-6 py-3 text-sm font-semibold text-white hover:bg-[#8b0000] transition-colors">
+        Apply Now <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="scroll-fade delay-2 rounded-3xl overflow-hidden bg-stone-100" style="min-height:320px;">
+      <img src="../assets/images/CareersPhoto.png" class="w-full h-full object-cover" style="min-height:320px;" onerror="this.parentElement.style.background='#e7e0d8'"/>
+    </div>
+  </div>
+
+  <!-- What We're Looking For -->
+  <div class="py-16 border-b border-stone-200">
+    <div class="scroll-fade mb-10">
+      <p class="section-tag mb-3 text-[#D13226]">Requirements</p>
+      <h2 class="text-3xl font-extrabold text-slate-900 leading-snug">What we're looking for</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="scroll-fade rounded-2xl border border-slate-200 bg-white p-6">
+        <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style="background:#0eb097">
+          <svg class="w-5 h-5" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <h3 class="font-extrabold text-slate-900 mb-2">Engineering Student</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">Currently enrolled in BS Electrical, Electronics, Instrumentation, or Mechatronics Engineering.</p>
+      </div>
+      <div class="scroll-fade delay-1 rounded-2xl border border-slate-200 bg-white p-6">
+        <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style="background:#ac0505">
+          <svg class="w-5 h-5" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <h3 class="font-extrabold text-slate-900 mb-2">Eager to Learn</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">Willingness to learn in a fast-paced environment and take on real responsibilities.</p>
+      </div>
+      <div class="scroll-fade delay-2 rounded-2xl border border-slate-200 bg-white p-6">
+        <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4 bg-slate-800">
+          <svg class="w-5 h-5" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+        </div>
+        <h3 class="font-extrabold text-slate-900 mb-2">Team-Oriented</h3>
+        <p class="text-slate-600 text-sm leading-relaxed">Comfortable working alongside engineers, technicians, and project managers.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- What You'll Do -->
+  <div class="py-16 border-b border-stone-200">
+    <div class="scroll-fade mb-8">
+      <p class="section-tag mb-3 text-[#D13226]">Responsibilities</p>
+      <h2 class="text-3xl font-extrabold text-slate-900 leading-snug">What you'll be doing</h2>
+    </div>
+    <div class="scroll-fade grid sm:grid-cols-2 gap-4">
+      <div class="flex items-start gap-3"><span class="mt-1.5 w-2 h-2 rounded-full bg-[#ac0505] flex-shrink-0"></span><p class="text-slate-600 text-sm leading-relaxed">Assist engineers in PLC and SCADA programming tasks.</p></div>
+      <div class="flex items-start gap-3"><span class="mt-1.5 w-2 h-2 rounded-full bg-[#ac0505] flex-shrink-0"></span><p class="text-slate-600 text-sm leading-relaxed">Support on-site commissioning and loop checking activities.</p></div>
+      <div class="flex items-start gap-3"><span class="mt-1.5 w-2 h-2 rounded-full bg-[#ac0505] flex-shrink-0"></span><p class="text-slate-600 text-sm leading-relaxed">Help prepare technical documentation and project reports.</p></div>
+      <div class="flex items-start gap-3"><span class="mt-1.5 w-2 h-2 rounded-full bg-[#ac0505] flex-shrink-0"></span><p class="text-slate-600 text-sm leading-relaxed">Learn hands-on wiring and control panel assembly techniques.</p></div>
+      <div class="flex items-start gap-3"><span class="mt-1.5 w-2 h-2 rounded-full bg-[#ac0505] flex-shrink-0"></span><p class="text-slate-600 text-sm leading-relaxed">Observe and participate in Factory Acceptance Testing (FAT).</p></div>
+      <div class="flex items-start gap-3"><span class="mt-1.5 w-2 h-2 rounded-full bg-[#ac0505] flex-shrink-0"></span><p class="text-slate-600 text-sm leading-relaxed">Shadow senior engineers across different project phases.</p></div>
+    </div>
+  </div>
+
+  <!-- Apply CTA -->
+  <div class="scroll-fade py-16">
+    <div class="rounded-2xl bg-slate-950 text-white p-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+      <div>
+        <h3 class="text-2xl font-extrabold mb-2">Ready to apply for OJT?</h3>
+        <p class="text-slate-400 text-sm max-w-xl leading-relaxed">Send your resume, endorsement letter from your school, and a brief introduction. Let us know your preferred start date and required number of hours.</p>
+        <div class="mt-3 text-sm text-slate-300"><span class="font-semibold text-white">Email:</span> <a href="mailto:info@plcsystems.com.ph" class="underline hover:text-white ml-1">info@plcsystems.com.ph</a></div>
+      </div>
+      <a href="../index.html#contact" class="shrink-0 inline-flex items-center justify-center rounded-xl bg-[#ac0505] px-8 py-4 text-sm font-semibold text-white hover:bg-[#8b0000] transition-colors whitespace-nowrap">Apply via Contact Form →</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="mx-auto max-w-7xl px-6 pb-16">
+  <a href="../index.html#careers" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-500 hover:text-slate-900 transition-colors">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Back to Careers
+  </a>
+</div>
+
+<footer class="bg-slate-950 text-slate-400 text-sm">
+  <div class="mx-auto max-w-7xl px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+    <div>© 2026 Watchdog Automation OPC. All rights reserved.</div>
+    <a href="../index.html#contact" class="text-white hover:text-slate-300">Get in Touch →</a>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.scroll-fade').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
