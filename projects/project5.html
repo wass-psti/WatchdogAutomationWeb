@@ -11,32 +11,19 @@
     .group:hover .nav-arrow { transform: rotate(180deg); }
 
     .section-label {
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       font-weight: 800;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: #ac0505;
-      margin-bottom: 0.8rem;
-    }
-
-    .section-title {
-      font-size: 1.125rem;
-      font-weight: 700;
-      color: #1e293b;
-      margin-bottom: 0.75rem;
-    }
-
-    .body-text {
-      font-size: 0.95rem;
-      line-height: 1.7;
-      color: #475569;
+      margin-bottom: 0.6rem;
     }
 
     .tech-row {
       display: grid;
-      grid-template-columns: 130px 1fr;
-      gap: 1rem;
-      padding: 0.75rem 0;
+      grid-template-columns: 165px 1fr;
+      gap: 1.25rem;
+      padding: 1rem 0;
       border-bottom: 1px solid #f1f5f9;
       align-items: start;
     }
@@ -44,12 +31,38 @@
     @media (max-width: 480px) {
       .tech-row { grid-template-columns: 1fr; gap: 0.2rem; }
     }
-    .tech-key { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #ac0505; }
-    .tech-val { font-size: 0.875rem; color: #334155; line-height: 1.6; }
+    .tech-key { font-size: 0.85rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #ac0505; }
+    .tech-val { font-size: 1.0625rem; color: #334155; line-height: 1.7; }
 
     @media (min-width: 1024px) {
       .sidebar-sticky { position: sticky; top: 5.5rem; }
     }
+
+    /* ── Scroll-triggered fade-in ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-left {
+      opacity: 0;
+      transform: translateX(-24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .delay-100 { transition-delay: 0.10s; }
+    .delay-200 { transition-delay: 0.20s; }
+    .delay-300 { transition-delay: 0.30s; }
+    .delay-400 { transition-delay: 0.40s; }
+    .delay-500 { transition-delay: 0.50s; }
+    .delay-600 { transition-delay: 0.60s; }
   </style>
 </head>
 <body class="bg-white text-slate-900">
@@ -217,7 +230,7 @@
   </div>
 
   <!-- Category tag -->
-  <span class="inline-block text-xs font-bold uppercase tracking-widest text-[#ac0505] mb-3">Industrial Automation · Siemens PLC Migration</span>
+  <span class="inline-block text-sm font-bold uppercase tracking-widest text-[#ac0505] mb-3">Industrial Automation · Siemens PLC Migration</span>
 
   <!-- Title -->
   <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight mb-4" style="letter-spacing:-0.02em;">
@@ -234,8 +247,8 @@
   </div>
 </div>
 
-<!-- ═══════════════════ HERO IMAGE (full-width, no text overlay) ═══════════════════ -->
-<div class="mx-auto max-w-5xl px-4 sm:px-6 mb-10">
+<!-- ═══════════════════ HERO IMAGE ═══════════════════ -->
+<div class="mx-auto max-w-5xl px-4 sm:px-6 mb-10 fade-up">
   <img
     src="../assets/images/PLCUpgrade.jpeg"
     alt="S7-300 to S7-1500 PLC Migration"
@@ -252,23 +265,23 @@
     <div class="flex-1 min-w-0 space-y-10">
 
       <!-- Overview -->
-      <div>
+      <div class="fade-up">
         <div class="section-label">Project Overview</div>
-        <p class="body-text">
+        <p class="text-slate-600 text-lg leading-relaxed">
           Complete migration of an existing Siemens S7-300 PLC system to Siemens S7-1500 platform, including control logic conversion, hardware replacement, I/O verification, testing, and commissioning for improved system reliability and long-term maintainability.
         </p>
       </div>
 
       <!-- Background -->
-      <div>
+      <div class="fade-up">
         <div class="section-label">Background &amp; Challenge</div>
-        <p class="body-text">
+        <p class="text-slate-600 text-lg leading-relaxed">
           The plant was operating on an aging Siemens S7-300 control platform that required modernization to improve performance, diagnostics, and support availability. The challenge was to migrate the automation system to the Siemens S7-1500 platform while preserving existing plant sequences, interlocks, and process behavior, all with minimal disruption to production operations.
         </p>
       </div>
 
       <!-- Technical Details -->
-      <div>
+      <div class="fade-up">
         <div class="section-label">Technical Details</div>
         <div class="rounded-xl border border-slate-200 overflow-hidden">
           <div class="tech-row px-4"><div class="tech-key">PLC Platform</div><div class="tech-val">Siemens SIMATIC S7-1500</div></div>
@@ -280,13 +293,13 @@
       </div>
 
       <!-- Scope of Work -->
-      <div>
+      <div class="fade-up">
         <div class="section-label">Scope of Work</div>
         <ul class="space-y-2">
-          <li class="flex items-start gap-3 text-sm text-slate-600"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>Migration of PLC program and control logic from S7-300 to S7-1500</li>
-          <li class="flex items-start gap-3 text-sm text-slate-600"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>Replacement and installation of Siemens PLC hardware and associated components</li>
-          <li class="flex items-start gap-3 text-sm text-slate-600"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>I/O verification, signal checking, and field integration</li>
-          <li class="flex items-start gap-3 text-sm text-slate-600"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>System testing, commissioning, and operational validation</li>
+          <li class="flex items-start gap-3 text-lg text-slate-600 fade-left delay-100"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>Migration of PLC program and control logic from S7-300 to S7-1500</li>
+          <li class="flex items-start gap-3 text-lg text-slate-600 fade-left delay-200"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>Replacement and installation of Siemens PLC hardware and associated components</li>
+          <li class="flex items-start gap-3 text-lg text-slate-600 fade-left delay-300"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>I/O verification, signal checking, and field integration</li>
+          <li class="flex items-start gap-3 text-lg text-slate-600 fade-left delay-400"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>System testing, commissioning, and operational validation</li>
         </ul>
       </div>
 
@@ -301,7 +314,7 @@
     </div>
 
     <!-- ── SIDEBAR ── -->
-    <div class="w-full lg:w-64 shrink-0 sidebar-sticky space-y-4">
+    <div class="w-full lg:w-64 shrink-0 sidebar-sticky space-y-4 fade-up delay-200">
 
       <!-- Project details -->
       <div class="rounded-xl border border-slate-200 overflow-hidden">
@@ -338,6 +351,27 @@
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+
+<script>
+  (function () {
+    const els = document.querySelectorAll('.fade-up, .fade-left');
+    if (!els.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    els.forEach((el) => observer.observe(el));
+  })();
 </script>
 
 </body>
