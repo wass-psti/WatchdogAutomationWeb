@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Water Quality Analysis System | Watchdog Automation</title>
+  <title>Offshore Drilling Rig Automation Modernization | Watchdog Automation</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
@@ -11,7 +11,7 @@
     .group:hover .nav-arrow { transform: rotate(180deg); }
 
     .section-label {
-      font-size: 0.65rem;
+      font-size: 0.8rem;
       font-weight: 800;
       letter-spacing: 0.2em;
       text-transform: uppercase;
@@ -21,9 +21,9 @@
 
     .tech-row {
       display: grid;
-      grid-template-columns: 130px 1fr;
-      gap: 1rem;
-      padding: 0.75rem 0;
+      grid-template-columns: 165px 1fr;
+      gap: 1.25rem;
+      padding: 1rem 0;
       border-bottom: 1px solid #f1f5f9;
       align-items: start;
     }
@@ -31,12 +31,38 @@
     @media (max-width: 480px) {
       .tech-row { grid-template-columns: 1fr; gap: 0.2rem; }
     }
-    .tech-key { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #ac0505; }
-    .tech-val { font-size: 0.875rem; color: #334155; line-height: 1.6; }
+    .tech-key { font-size: 0.85rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #ac0505; }
+    .tech-val { font-size: 1.0625rem; color: #334155; line-height: 1.7; }
 
     @media (min-width: 1024px) {
       .sidebar-sticky { position: sticky; top: 5.5rem; }
     }
+
+    /* ── Scroll-triggered fade-in ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-left {
+      opacity: 0;
+      transform: translateX(-24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .delay-100 { transition-delay: 0.10s; }
+    .delay-200 { transition-delay: 0.20s; }
+    .delay-300 { transition-delay: 0.30s; }
+    .delay-400 { transition-delay: 0.40s; }
+    .delay-500 { transition-delay: 0.50s; }
+    .delay-600 { transition-delay: 0.60s; }
   </style>
 </head>
 <body class="bg-white text-slate-900">
@@ -204,18 +230,16 @@
   </div>
 
   <!-- Category tag -->
-  <span class="inline-block text-xs font-bold uppercase tracking-widest text-[#ac0505] mb-3">Offshore Automation, PLC/SCADA Modernization, Industrial Control Systems</span>
+  <span class="inline-block text-sm font-bold uppercase tracking-widest text-[#ac0505] mb-3">Offshore Automation · PLC/SCADA Modernization · Industrial Control Systems</span>
 
   <!-- Title -->
   <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight mb-4" style="letter-spacing:-0.02em;">
-    Offshore Drilling Rig Automation Modernization –<br class="hidden sm:block"/> Control System Assessment & Platform Migration for a Jack-Up Rig in the Caspian Sea, Turkmenistan
+    Offshore Drilling Rig Automation Modernization –<br class="hidden sm:block"/> Control System Assessment &amp; Platform Migration for a Jack-Up Rig in the Caspian Sea, Turkmenistan
   </h1>
 
   <!-- Meta row -->
   <div class="flex flex-wrap items-center gap-4 text-sm text-slate-500 pb-6 border-b border-slate-200">
-    <span><span class="font-semibold text-slate-700">Client:</span> Pilipinas Water Resources, Inc.</span>
-    <span class="hidden sm:inline text-slate-300">|</span>
-    <span><span class="font-semibold text-slate-700">Location:</span> Philippines</span>
+    <span><span class="font-semibold text-slate-700">Location:</span> Caspian Sea, Turkmenistan</span>
     <span class="hidden sm:inline text-slate-300">|</span>
     <span class="inline-flex items-center gap-1.5 font-semibold text-emerald-600">
       <span class="w-2 h-2 rounded-full bg-emerald-500"></span>Completed
@@ -223,10 +247,11 @@
   </div>
 </div>
 
-<!-- ═══════════════════ HERO IMAGE (full-width, no text overlay) ═══════════════════ -->
-<div class="mx-auto max-w-5xl px-4 sm:px-6 mb-10">
+<!-- ═══════════════════ HERO IMAGE ═══════════════════ -->
+<div class="mx-auto max-w-5xl px-4 sm:px-6 mb-10 fade-up">
   <img
     src="../assets/images/ProjectTestOne.png"
+    alt="Offshore Drilling Rig Automation Modernization"
     class="w-full rounded-xl object-cover"
     style="height: clamp(220px, 40vw, 480px);"
   />
@@ -240,23 +265,23 @@
     <div class="flex-1 min-w-0 space-y-10">
 
       <!-- Overview -->
-      <div>
+      <div class="fade-up">
         <div class="section-label">Project Overview</div>
-        <p class="text-slate-600 text-base leading-relaxed">
+        <p class="text-slate-600 text-lg leading-relaxed">
           Watchdog Automation is currently engaged in a multi-phase automation modernization program for a jack-up offshore drilling rig operating in the Caspian Sea, Turkmenistan. The project involves the comprehensive assessment, engineering, and staged migration of multiple critical rig control systems, replacing obsolete automation platforms with modern, reliable industrial control technologies.
         </p>
       </div>
 
       <!-- Background -->
-      <div>
+      <div class="fade-up">
         <div class="section-label">Background &amp; Challenges</div>
-        <p class="text-slate-600 text-sm leading-relaxed">
+        <p class="text-slate-600 text-lg leading-relaxed">
           Offshore drilling rigs operate in some of the most demanding industrial environments in the world, where control system reliability, redundancy, and operational safety are critical to continuous drilling operations. Many of the automation systems installed on the rig had reached end-of-life status, creating risks associated with hardware obsolescence, limited spare parts availability, and increasingly complex maintenance requirements.
         </p>
       </div>
 
       <!-- Technical Details -->
-      <div>
+      <div class="fade-up">
         <div class="section-label">Technical Details</div>
         <div class="rounded-xl border border-slate-200 overflow-hidden">
           <div class="tech-row px-4"><div class="tech-key">Instruments</div><div class="tech-val">Pressure Transmitters, Flow Transmitters, Level Sensors, Temperature Sensors, Hydraulic System Sensors</div></div>
@@ -268,13 +293,13 @@
       </div>
 
       <!-- Scope of Work -->
-      <div>
+      <div class="fade-up">
         <div class="section-label">Scope of Work</div>
         <ul class="space-y-2">
-          <li class="flex items-start gap-3 text-sm text-slate-600"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>Engineering design and system planning</li>
-          <li class="flex items-start gap-3 text-sm text-slate-600"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>Removal of obsolete PLC hardware</li>
-          <li class="flex items-start gap-3 text-sm text-slate-600"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>Installation of new control system</li>
-          <li class="flex items-start gap-3 text-sm text-slate-600"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>Final system verification</li>
+          <li class="flex items-start gap-3 text-lg text-slate-600 fade-left delay-100"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>Engineering design and system planning</li>
+          <li class="flex items-start gap-3 text-lg text-slate-600 fade-left delay-200"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>Removal of obsolete PLC hardware</li>
+          <li class="flex items-start gap-3 text-lg text-slate-600 fade-left delay-300"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>Installation of new control system</li>
+          <li class="flex items-start gap-3 text-lg text-slate-600 fade-left delay-400"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>Final system verification</li>
         </ul>
       </div>
 
@@ -289,7 +314,7 @@
     </div>
 
     <!-- ── SIDEBAR ── -->
-    <div class="w-full lg:w-64 shrink-0 sidebar-sticky space-y-4">
+    <div class="w-full lg:w-64 shrink-0 sidebar-sticky space-y-4 fade-up delay-200">
 
       <!-- Project details -->
       <div class="rounded-xl border border-slate-200 overflow-hidden">
@@ -297,9 +322,8 @@
           <div class="text-xs font-extrabold uppercase tracking-widest text-slate-500">Project Details</div>
         </div>
         <div class="px-4 py-4 space-y-3 text-sm">
-          <div><div class="text-xs font-bold text-slate-400 uppercase mb-0.5">Client</div><div class="font-semibold text-slate-800">Offshore Drilling Contractor</div></div>
           <div><div class="text-xs font-bold text-slate-400 uppercase mb-0.5">Category</div><div class="font-semibold text-slate-800">Industrial Automation, PLC/SCADA Upgrade, Offshore Control System</div></div>
-          <div><div class="text-xs font-bold text-slate-400 uppercase mb-0.5">Location</div><div class="font-semibold text-slate-800">Offshore Installation Site</div></div>
+          <div><div class="text-xs font-bold text-slate-400 uppercase mb-0.5">Location</div><div class="font-semibold text-slate-800">Caspian Sea, Turkmenistan</div></div>
           <div><div class="text-xs font-bold text-slate-400 uppercase mb-0.5">Status</div>
             <span class="inline-flex items-center gap-1.5 font-semibold text-emerald-700"><span class="w-2 h-2 rounded-full bg-emerald-500"></span>Completed</span>
           </div>
@@ -327,6 +351,27 @@
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+
+<script>
+  (function () {
+    const els = document.querySelectorAll('.fade-up, .fade-left');
+    if (!els.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    els.forEach((el) => observer.observe(el));
+  })();
 </script>
 
 </body>
