@@ -19,20 +19,56 @@
       margin-bottom: 0.6rem;
     }
 
-    .tech-row {
+    /* ── Grid card list (Phase 1 large list) ── */
+    .sys-grid {
       display: grid;
-      grid-template-columns: 165px 1fr;
-      gap: 1.25rem;
-      padding: 1rem 0;
-      border-bottom: 1px solid #f1f5f9;
-      align-items: start;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.65rem;
     }
-    .tech-row:last-child { border-bottom: none; }
-    @media (max-width: 480px) {
-      .tech-row { grid-template-columns: 1fr; gap: 0.2rem; }
+    @media (max-width: 600px) {
+      .sys-grid { grid-template-columns: 1fr; }
     }
-    .tech-key { font-size: 0.85rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #ac0505; }
-    .tech-val { font-size: 1.0625rem; color: #334155; line-height: 1.7; }
+    .sys-card {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.6rem;
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #334155;
+      line-height: 1.4;
+    }
+    .sys-card-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #ac0505;
+      flex-shrink: 0;
+    }
+
+    /* ── Left-border pill list (small lists) ── */
+    .pill-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .pill-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.65rem 1rem;
+      background: #f8fafc;
+      border-left: 3px solid #ac0505;
+      border-radius: 0 0.5rem 0.5rem 0;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: #334155;
+    }
+    .prose-body { text-align: justify; }
+    .flex-1 p { text-align: justify; }
 
     @media (min-width: 1024px) {
       .sidebar-sticky { position: sticky; top: 5.5rem; }
@@ -269,9 +305,12 @@
         <div class="section-label">Project Overview</div>
         <p class="text-slate-600 text-lg leading-relaxed">
           Watchdog Automation is currently engaged in a multi-phase automation modernization program for a jack-up offshore drilling rig operating in the Caspian Sea, Turkmenistan. The project involves the comprehensive assessment, engineering, and staged migration of multiple critical rig control systems, replacing obsolete automation platforms with modern, reliable industrial control technologies.
-Offshore drilling rigs operate in some of the most demanding industrial environments in the world, where control system reliability, redundancy, and operational safety are critical to continuous drilling operations. Many of the automation systems installed on the rig had reached end-of-life status, creating risks associated with hardware obsolescence, limited spare parts availability, and increasingly complex maintenance requirements.
-To address these challenges, Watchdog Automation was contracted to deliver a structured modernization program consisting of multiple project phases, ensuring that the rig can continue operations while its automation systems are progressively upgraded.
-
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          Offshore drilling rigs operate in some of the most demanding industrial environments in the world, where control system reliability, redundancy, and operational safety are critical to continuous drilling operations. Many of the automation systems installed on the rig had reached end-of-life status, creating risks associated with hardware obsolescence, limited spare parts availability, and increasingly complex maintenance requirements.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          To address these challenges, Watchdog Automation was contracted to deliver a structured modernization program consisting of multiple project phases, ensuring that the rig can continue operations while its automation systems are progressively upgraded.
         </p>
       </div>
 
@@ -280,53 +319,151 @@ To address these challenges, Watchdog Automation was contracted to deliver a str
         <div class="section-label">Phase 1 — Comprehensive Rig Control System Assessment</div>
         <p class="text-slate-600 text-lg leading-relaxed">
           The first phase of the project focused on a complete technical assessment of the automation infrastructure across the rig floor and supporting systems. This phase involved detailed engineering analysis of existing control hardware, PLC architectures, communication networks, operator interfaces, and drive systems.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
           The assessment covered numerous mission-critical rig systems, including:
         </p>
       </div>
 
-      <!-- Technical Details -->
+      <!-- Phase 1 Systems List -->
       <div class="fade-up">
-        <div class="rounded-xl border border-slate-200 overflow-hidden">
-          <div class="tech-row px-4"><div class="tech-key">Air dryer control systems</div>
-          <div class="tech-row px-4"><div class="tech-key">Alarm monitoring and safety systems</div>
-          <div class="tech-row px-4"><div class="tech-key">Roughneck anti-collision control system</div>
-          <div class="tech-row px-4"><div class="tech-key">Blowout Preventer (BOP) and diverter control systems</div>
-          <div class="tech-row px-4"><div class="tech-key">Choke and kill manifold automation</div>
-          <div class="tech-row px-4"><div class="tech-key">Crane control systems</div>
-          <div class="tech-row px-4"><div class="tech-key">Drawworks control system</div>
-          <div class="tech-row px-4"><div class="tech-key">Fire and gas detection systems</div>
-          <div class="tech-row px-4"><div class="tech-key">Engine control systems</div>
-          <div class="tech-row px-4"><div class="tech-key">Iron roughneck automation</div>
-          <div class="tech-row px-4"><div class="tech-key">Jacking and fixation control systems</div>
-          <div class="tech-row px-4"><div class="tech-key">Preload and ballast control systems</div>
-          <div class="tech-row px-4"><div class="tech-key">Doghouse purging system</div>
-          <div class="tech-row px-4"><div class="tech-key">Raw water pump control systems</div>
-          <div class="tech-row px-4"><div class="tech-key">Skidding system controls</div>
-          <div class="tech-row px-4"><div class="tech-key">Electrical switchboard automation</div>
-          <div class="tech-row px-4"><div class="tech-key">Top drive control system</div>
-          <div class="tech-row px-4"><div class="tech-key">Driller’s console interface systems</div>
-          <div class="tech-row px-4"><div class="tech-key">Compressor control systems</div>
-          <div class="tech-row px-4"><div class="tech-key">Platform anchoring system</div>
-          <div class="tech-row px-4"><div class="tech-key">Generator control systems</div>
-          <div class="tech-row px-4"><div class="tech-key">Drawworks hydraulic power unit control system</div>
+        <div class="sys-grid">
+          <div class="sys-card"><span class="sys-card-dot"></span>Air dryer control systems</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Alarm monitoring and safety systems</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Roughneck anti-collision control system</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Blowout Preventer (BOP) and diverter control systems</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Choke and kill manifold automation</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Crane control systems</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Drawworks control system</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Fire and gas detection systems</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Engine control systems</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Iron roughneck automation</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Jacking and fixation control systems</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Preload and ballast control systems</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Doghouse purging system</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Raw water pump control systems</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Skidding system controls</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Electrical switchboard automation</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Top drive control system</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Driller's console interface systems</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Compressor control systems</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Platform anchoring system</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Generator control systems</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Drawworks hydraulic power unit control system</div>
         </div>
       </div>
 
-       <!-- Phase 1 Continuation -->
+      <!-- Phase 1 Continuation -->
       <div class="fade-up">
-        The objective of this phase was to identify obsolete equipment, assess operational risks, and define a modernization roadmap that would allow the rig to transition to modern automation platforms without compromising drilling operations.
-        The results of this assessment formed the technical foundation for the rig’s long-term automation modernization strategy.
+        <p class="text-slate-600 text-lg leading-relaxed">
+          The objective of this phase was to identify obsolete equipment, assess operational risks, and define a modernization roadmap that would allow the rig to transition to modern automation platforms without compromising drilling operations.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          The results of this assessment formed the technical foundation for the rig's long-term automation modernization strategy.
+        </p>
       </div>
 
-      <!-- Scope of Work -->
+      <!-- Phase 2 -->
       <div class="fade-up">
-        <div class="section-label">Scope of Work</div>
-        <ul class="space-y-2">
-          <li class="flex items-start gap-3 text-lg text-slate-600 fade-left delay-100"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>Engineering design and system planning</li>
-          <li class="flex items-start gap-3 text-lg text-slate-600 fade-left delay-200"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>Removal of obsolete PLC hardware</li>
-          <li class="flex items-start gap-3 text-lg text-slate-600 fade-left delay-300"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>Installation of new control system</li>
-          <li class="flex items-start gap-3 text-lg text-slate-600 fade-left delay-400"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>Final system verification</li>
+        <div class="section-label">Phase 2 — Automation Platform Migration &amp; Implementation</div>
+        <p class="text-slate-600 text-lg leading-relaxed">
+          Following the successful completion of the assessment phase, the project has now progressed into Phase 2: staged modernization and migration of the rig's obsolete automation systems.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          This phase involves the systematic replacement of legacy PLC platforms, AC drive systems, and DC drive systems, ensuring that each subsystem is upgraded while maintaining operational continuity.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          The modernization program follows a two-stage execution approach:
+        </p>
+      </div>
+
+      <!-- Offsite Engineering -->
+      <div class="fade-up">
+        <div class="section-label">Offsite Engineering &amp; Software Migration</div>
+        <p class="text-slate-600 text-lg leading-relaxed">
+          Prior to field deployment, all control system migrations are performed offsite by Watchdog Automation engineers, including:
+        </p>
+        <div class="pill-list mt-6">
+          <div class="pill-item">PLC program migration and redevelopment</div>
+          <div class="pill-item">HMI software modernization</div>
+          <div class="pill-item">Control logic validation and testing</div>
+          <div class="pill-item">System architecture redesign</div>
+          <div class="pill-item">Drive integration engineering</div>
+          <div class="pill-item">Simulation and functional verification</div>
+        </div>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          This offsite engineering approach significantly reduces the amount of time required for onsite implementation, which is critical in offshore environments where operational downtime is extremely costly.
+        </p>
+      </div>
+
+      <!-- Offshore Deployment -->
+      <div class="fade-up">
+        <div class="section-label">Offshore Deployment &amp; System Implementation</div>
+        <p class="text-slate-600 text-lg leading-relaxed">
+          Once the engineering and testing phases are completed, the upgraded systems are deployed onsite on the drilling rig, where Watchdog Automation engineers perform:
+        </p>
+        <div class="pill-list mt-6">
+          <div class="pill-item">Removal of obsolete automation hardware</div>
+          <div class="pill-item">Installation of upgraded PLC and drive systems</div>
+          <div class="pill-item">Integration with existing rig instrumentation and control networks</div>
+          <div class="pill-item">System testing and commissioning</div>
+          <div class="pill-item">Functional verification with rig operational teams</div>
+        </div>
+      </div>
+
+      <!-- Current Implementation Scope -->
+      <div class="fade-up">
+        <div class="section-label">Current Implementation Scope</div>
+        <p class="text-slate-600 text-lg leading-relaxed">
+          As part of the ongoing modernization program, Watchdog Automation is currently executing the upgrade of the Drawworks control system, one of the most critical automation systems in the drilling operation.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          The current scope includes:
+        </p>
+        <div class="pill-list mt-6">
+          <div class="pill-item">Migration of the Drawworks PLC control system</div>
+          <div class="pill-item">Modernization of the Drawworks HMI operator interface</div>
+          <div class="pill-item">Integration with the Hydraulic Power Unit control system</div>
+          <div class="pill-item">Functional testing and commissioning</div>
+        </div>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          The Drawworks is a core component of drilling operations, responsible for controlling the hoisting system that raises and lowers the drill string. Ensuring precise control and system reliability is essential for safe and efficient drilling performance.
+        </p>
+      </div>
+
+      <!-- Engineering for Mission-Critical Offshore Operations -->
+      <div class="fade-up">
+        <div class="section-label">Engineering for Mission-Critical Offshore Operations</div>
+        <p class="text-slate-600 text-lg leading-relaxed">
+          This project demonstrates Watchdog Automation's capability to deliver advanced automation engineering services in offshore drilling environments, where system reliability, safety, and operational continuity are paramount.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          Through a structured modernization strategy and disciplined engineering approach, Watchdog Automation is helping the rig operator transition from obsolete automation systems to a modern, scalable, and maintainable control platform.
+        </p>
+      </div>
+
+      <!-- Delivering Next-Generation Offshore Automation -->
+      <div class="fade-up">
+        <div class="section-label">Delivering Next-Generation Offshore Automation</div>
+        <p class="text-slate-600 text-lg leading-relaxed">
+          The ongoing modernization program will ultimately provide the drilling rig with:
+        </p>
+        <ul class="space-y-2 mt-4">
+          <li class="flex items-start gap-3 text-lg text-slate-600 fade-left delay-100"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>Replacement of obsolete PLC and drive systems</li>
+          <li class="flex items-start gap-3 text-lg text-slate-600 fade-left delay-200"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>Improved system reliability and diagnostics</li>
+          <li class="flex items-start gap-3 text-lg text-slate-600 fade-left delay-300"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>Modern operator interfaces and control architecture</li>
+          <li class="flex items-start gap-3 text-lg text-slate-600 fade-left delay-400"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>Long-term automation lifecycle support</li>
+          <li class="flex items-start gap-3 text-lg text-slate-600 fade-left delay-500"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>Reduced operational risk from legacy systems</li>
+          <li class="flex items-start gap-3 text-lg text-slate-600 fade-left delay-600"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>A scalable platform for future drilling technology upgrades</li>
         </ul>
+      </div>
+
+      <!-- Automation Expertise -->
+      <div class="fade-up">
+        <div class="section-label">Automation Expertise for the Global Energy Industry</div>
+        <p class="text-slate-600 text-lg leading-relaxed">
+          With expertise spanning industrial automation, offshore drilling systems, PLC modernization, and large-scale control system migration, Watchdog Automation continues to support the energy sector with high-reliability automation solutions for mission-critical operations.
+        </p>
       </div>
 
       <!-- Back link -->
