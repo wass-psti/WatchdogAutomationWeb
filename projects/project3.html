@@ -11,7 +11,7 @@
     .group:hover .nav-arrow { transform: rotate(180deg); }
 
     .section-label {
-      font-size: 0.65rem;
+      font-size: 0.8rem;
       font-weight: 800;
       letter-spacing: 0.2em;
       text-transform: uppercase;
@@ -19,24 +19,108 @@
       margin-bottom: 0.6rem;
     }
 
-    .tech-row {
+    /* ── Grid card list ── */
+    .sys-grid {
       display: grid;
-      grid-template-columns: 130px 1fr;
-      gap: 1rem;
-      padding: 0.75rem 0;
-      border-bottom: 1px solid #f1f5f9;
-      align-items: start;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.65rem;
     }
-    .tech-row:last-child { border-bottom: none; }
-    @media (max-width: 480px) {
-      .tech-row { grid-template-columns: 1fr; gap: 0.2rem; }
+    @media (max-width: 600px) {
+      .sys-grid { grid-template-columns: 1fr; }
     }
-    .tech-key { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #ac0505; }
-    .tech-val { font-size: 1.0625rem; color: #334155; line-height: 1.7; }
+    .sys-card {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.6rem;
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #334155;
+      line-height: 1.4;
+    }
+    .sys-card-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #ac0505;
+      flex-shrink: 0;
+    }
+
+    /* ── Left-border pill list ── */
+    .pill-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .pill-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.65rem 1rem;
+      background: #f8fafc;
+      border-left: 3px solid #ac0505;
+      border-radius: 0 0.5rem 0.5rem 0;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: #334155;
+    }
+    .pill-item-body { display: flex; flex-direction: column; gap: 0.15rem; }
+    .pill-item-title { font-weight: 800; color: #1e293b; }
+    .pill-item-desc { font-weight: 500; color: #64748b; font-size: 0.875rem; }
+
+    /* ── Inline spec list ── */
+    .spec-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .spec-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.65rem 1rem;
+      background: #f8fafc;
+      border-left: 3px solid #ac0505;
+      border-radius: 0 0.5rem 0.5rem 0;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: #334155;
+    }
+
+    .flex-1 p { text-align: justify; }
 
     @media (min-width: 1024px) {
       .sidebar-sticky { position: sticky; top: 5.5rem; }
     }
+
+    /* ── Scroll-triggered fade-in ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-left {
+      opacity: 0;
+      transform: translateX(-24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .delay-100 { transition-delay: 0.10s; }
+    .delay-200 { transition-delay: 0.20s; }
+    .delay-300 { transition-delay: 0.30s; }
+    .delay-400 { transition-delay: 0.40s; }
+    .delay-500 { transition-delay: 0.50s; }
+    .delay-600 { transition-delay: 0.60s; }
   </style>
 </head>
 <body class="bg-white text-slate-900">
@@ -200,15 +284,15 @@
     <span>›</span>
     <a href="../index.html#projects" class="hover:text-slate-700">Projects</a>
     <span>›</span>
-    <span class="text-slate-600">Airport Fuel Farm & Hydrant Automation Engineering</span>
+    <span class="text-slate-600">Airport Fuel Farm &amp; Hydrant Automation Engineering</span>
   </div>
 
   <!-- Category tag -->
-  <span class="inline-block text-xs font-bold uppercase tracking-widest text-[#ac0505] mb-3">Aviation Infrastructure · DCS Engineering · Fuel Farm Automation</span>
+  <span class="inline-block text-sm font-bold uppercase tracking-widest text-[#ac0505] mb-3">Aviation Infrastructure · DCS Engineering · Fuel Farm Automation</span>
 
   <!-- Title -->
   <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight mb-4" style="letter-spacing:-0.02em;">
-    Airport Fuel Farm &amp; Hydrant Automation Engineering –<br class="hidden sm:block"/> International Airport Expansion – Malé, Maldives
+    Airport Fuel Farm &amp; Hydrant Automation Engineering –<br class="hidden sm:block"/> Velana International Airport Expansion – Malé, Maldives
   </h1>
 
   <!-- Meta row -->
@@ -221,8 +305,8 @@
   </div>
 </div>
 
-<!-- ═══════════════════ HERO IMAGE (full-width, no text overlay) ═══════════════════ -->
-<div class="mx-auto max-w-5xl px-4 sm:px-6 mb-10">
+<!-- ═══════════════════ HERO IMAGE ═══════════════════ -->
+<div class="mx-auto max-w-5xl px-4 sm:px-6 mb-10 fade-up">
   <img
     src="../assets/images/AirportFuel2.png"
     alt="Airport Fuel Farm & Hydrant Automation Engineering"
@@ -239,46 +323,205 @@
     <div class="flex-1 min-w-0 space-y-10">
 
       <!-- Overview -->
-      <div>
-        <div class="section-label text-lg">Project Overview</div>
+      <div class="fade-up">
+        <div class="section-label">Project Overview</div>
         <p class="text-slate-600 text-lg leading-relaxed">
-          Watchdog Automation played a key engineering role in the modernization and expansion of the aviation fuel infrastructure at the primary international gateway to the Republic of Maldives. The project involved the complete detailed design of the automation and instrumentation systems for the airport's fuel farm and aircraft fuel hydrant distribution network, supporting expanded airport operations and increasing aviation fuel handling capacity. Executed over a five-year period from 2018 to 2023, the project overcame complex logistics, remote coordination, and COVID-19 disruptions while maintaining strict engineering standards required for aviation fuel systems.
+          Watchdog Automation played a key engineering role in the modernization and expansion of the aviation fuel infrastructure at Velana International Airport, the primary international gateway to the Republic of Maldives.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          The project involved the complete detailed design of the Automation and Instrumentation systems for the airport's Fuel Farm and Aircraft Fuel Hydrant Distribution Network, supporting the expansion of airport operations and the increasing demand for aviation fuel handling capacity.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          This large-scale infrastructure project was executed over a five-year period from 2018 to 2023, navigating complex logistics, remote project coordination, and major disruptions during the COVID-19 pandemic, while maintaining strict engineering standards required for aviation fuel systems.
         </p>
       </div>
 
-      <!-- Background -->
-      <div>
-        <div class="section-label text-lg">Background &amp; Challenge</div>
+      <!-- Aviation Fuel Infrastructure Automation Design -->
+      <div class="fade-up">
+        <div class="section-label">Aviation Fuel Infrastructure Automation Design</div>
         <p class="text-slate-600 text-lg leading-relaxed">
-          The project required the development of a comprehensive automation and instrumentation architecture to manage the safe storage, monitoring, and distribution of aviation fuel across the airport fuel farm and apron hydrant network. The fuel storage facility includes three aviation fuel tanks with 15,000 cubic meter capacity each, two diesel storage tanks with 500 cubic meter capacity each, and two petrol storage tanks with 50 cubic meter capacity each. These assets form the backbone of the airport's fuel supply chain and required highly reliable monitoring systems for tank gauging, flow measurement, pressure monitoring, and leak detection. The hydrant system includes five valve vault stations connected through a redundant fiber optic industrial network, ensuring reliable communication between field instrumentation and the central control system.
+          The project required the development of a comprehensive automation and instrumentation architecture to manage the safe storage, monitoring, and distribution of aviation fuel across the airport fuel farm and apron hydrant network.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          The fuel storage facility includes:
+        </p>
+        <div class="sys-grid mt-4">
+          <div class="sys-card"><span class="sys-card-dot"></span>3 aviation fuel tanks — 15,000 m³ capacity each</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>2 diesel storage tanks — 500 m³ capacity each</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>2 petrol storage tanks — 50 m³ capacity each</div>
+        </div>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          These storage assets form the backbone of the airport's fuel supply chain, requiring highly reliable monitoring systems for tank gauging, flow measurement, pressure monitoring, and leak detection.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          Watchdog Automation engineered the complete instrumentation package for the entire fuel farm, ensuring precise measurement, operational safety, and regulatory compliance.
         </p>
       </div>
 
-      <!-- Technical Details -->
-      <div>
-        <div class="section-label text-lg">Technical Details</div>
-        <div class="rounded-xl border border-slate-200 overflow-hidden">
-          <div class="tech-row px-4"><div class="tech-key">DCS Platform</div><div class="tech-val">Siemens PCS7 V9.0 Distributed Control System</div></div>
-          <div class="tech-row px-4"><div class="tech-key">Instrumentation</div><div class="tech-val">Endress+Hauser Coriolis Flowmeters, Tank Gauging Systems, process instrumentation, and Emerson pressure transmitters</div></div>
-          <div class="tech-row px-4"><div class="tech-key">I/O Scope</div><div class="tech-val">578 I/O signals covering tank instrumentation, pipeline monitoring, pump control, and hydrant valve vault monitoring</div></div>
-          <div class="tech-row px-4"><div class="tech-key">Architecture</div><div class="tech-val">Redundant PCS7 controllers, redundant PCS7 servers, one engineering station, and three operator client stations</div></div>
-          <div class="tech-row px-4"><div class="tech-key">Network</div><div class="tech-val">Redundant single-mode fiber optic PROFIBUS network for distributed field panels and valve vault stations</div></div>
-          <div class="tech-row px-4"><div class="tech-key">Control Panels</div><div class="tech-val">6 free-standing automation panels in the MCC room and 8 field panels across the airport apron</div></div>
-          <div class="tech-row px-4"><div class="tech-key">Deliverable</div><div class="tech-val">Complete detailed design of automation and instrumentation systems for the fuel farm and aircraft hydrant distribution network</div></div>
+      <!-- Hydrant Fuel Distribution System -->
+      <div class="fade-up">
+        <div class="section-label">Hydrant Fuel Distribution System</div>
+        <p class="text-slate-600 text-lg leading-relaxed">
+          The airport hydrant refueling network distributes aviation fuel directly to aircraft parking stands across the apron area.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          The hydrant system includes five valve vault stations, each equipped with instrumentation and automation systems designed to monitor fuel pressure, detect potential leaks, and maintain safe fuel distribution across the network.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          Each valve vault station was equipped with field instrumentation and connected to the central automation system through a redundant fiber optic industrial network, ensuring reliable communication between field devices and the central control system.
+        </p>
+      </div>
+
+      <!-- Instrumentation Engineering -->
+      <div class="fade-up">
+        <div class="section-label">Instrumentation Engineering</div>
+        <p class="text-slate-600 text-lg leading-relaxed">
+          The project utilized high-precision industrial instrumentation designed specifically for aviation fuel applications.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          Key instrumentation technologies included:
+        </p>
+        <div class="pill-list mt-4">
+          <div class="pill-item">
+            <div class="pill-item-body">
+              <span class="pill-item-title">Endress+Hauser Coriolis Flowmeters</span>
+              <span class="pill-item-desc">For high-accuracy aviation fuel flow measurement.</span>
+            </div>
+          </div>
+          <div class="pill-item">
+            <div class="pill-item-body">
+              <span class="pill-item-title">Endress+Hauser Tank Gauging Systems</span>
+              <span class="pill-item-desc">For real-time monitoring of fuel storage tank levels and inventory.</span>
+            </div>
+          </div>
+          <div class="pill-item">
+            <div class="pill-item-body">
+              <span class="pill-item-title">Endress+Hauser Process Instrumentation</span>
+              <span class="pill-item-desc">Including pressure transmitters and temperature sensors installed throughout the pipeline network.</span>
+            </div>
+          </div>
+          <div class="pill-item">
+            <div class="pill-item-body">
+              <span class="pill-item-title">Emerson Pressure Transmitters</span>
+              <span class="pill-item-desc">Installed in valve vault stations as part of the fuel leak detection system, providing early detection of abnormal pressure variations within the hydrant pipeline network.</span>
+            </div>
+          </div>
+        </div>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          In total, the automation system integrates 578 I/O signals, covering tank instrumentation, pipeline monitoring, pump control, and hydrant valve vault monitoring.
+        </p>
+      </div>
+
+      <!-- Distributed Control System Architecture -->
+      <div class="fade-up">
+        <div class="section-label">Distributed Control System Architecture</div>
+        <p class="text-slate-600 text-lg leading-relaxed">
+          The automation platform for the fuel farm and hydrant system was built on a Siemens PCS7 V9.0 Distributed Control System, a globally recognized automation platform widely used in large-scale process industries.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          The PCS7 architecture includes:
+        </p>
+        <div class="pill-list mt-4">
+          <div class="pill-item">
+            <div class="pill-item-body">
+              <span class="pill-item-title">Redundant PCS7 Controllers</span>
+              <span class="pill-item-desc">Ensuring high availability and continuous operation of the fuel infrastructure.</span>
+            </div>
+          </div>
+          <div class="pill-item">
+            <div class="pill-item-body">
+              <span class="pill-item-title">Redundant PCS7 Servers</span>
+              <span class="pill-item-desc">Providing reliable SCADA and process monitoring capabilities.</span>
+            </div>
+          </div>
+          <div class="pill-item">
+            <div class="pill-item-body">
+              <span class="pill-item-title">One Engineering Station</span>
+              <span class="pill-item-desc">For system configuration, diagnostics, and long-term system maintenance.</span>
+            </div>
+          </div>
+          <div class="pill-item">
+            <div class="pill-item-body">
+              <span class="pill-item-title">Three Operator Client Stations</span>
+              <span class="pill-item-desc">For real-time plant monitoring and fuel system supervision.</span>
+            </div>
+          </div>
+        </div>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          This architecture ensures that the airport fuel infrastructure operates with high reliability, redundancy, and centralized operational visibility.
+        </p>
+      </div>
+
+      <!-- Industrial Control Panel Engineering -->
+      <div class="fade-up">
+        <div class="section-label">Industrial Control Panel Engineering</div>
+        <p class="text-slate-600 text-lg leading-relaxed">
+          The project also required the design of multiple automation control panels to support the distributed automation architecture.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          The system includes:
+        </p>
+        <div class="pill-list mt-4">
+          <div class="pill-item">
+            <div class="pill-item-body">
+              <span class="pill-item-title">6 Free-Standing Automation Panels</span>
+              <span class="pill-item-desc">Installed in the main MCC room, each equipped with front and rear access doors for maintenance and serviceability.</span>
+            </div>
+          </div>
+          <div class="pill-item">
+            <div class="pill-item-body">
+              <span class="pill-item-title">8 Field Panels</span>
+              <span class="pill-item-desc">Installed across the airport apron to interface with instrumentation located in the valve vault stations.</span>
+            </div>
+          </div>
+        </div>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          These field panels communicate with the central control system through a redundant single-mode fiber optic PROFIBUS network, ensuring reliable communication across the large physical area of the airport fuel distribution system.
+        </p>
+      </div>
+
+      <!-- Engineering Through a Global Crisis -->
+      <div class="fade-up">
+        <div class="section-label">Engineering Through a Global Crisis</div>
+        <p class="text-slate-600 text-lg leading-relaxed">
+          The project was executed between 2018 and 2023, during a period that included major disruptions caused by the COVID-19 pandemic.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          Despite travel restrictions, supply chain challenges, and global project delays, Watchdog Automation maintained engineering continuity through remote collaboration, disciplined project management, and continuous coordination with project stakeholders.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          The successful delivery of this project demonstrates Watchdog Automation's capability to execute complex international automation projects under challenging global conditions.
+        </p>
+      </div>
+
+      <!-- Delivering Mission-Critical Aviation Infrastructure -->
+      <div class="fade-up">
+        <div class="section-label">Delivering Mission-Critical Aviation Infrastructure</div>
+        <p class="text-slate-600 text-lg leading-relaxed">
+          The completed automation system provides Velana International Airport with a modern, highly reliable fuel management infrastructure, ensuring safe and efficient fuel storage and aircraft refueling operations.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          Key capabilities delivered include:
+        </p>
+        <div class="sys-grid mt-4">
+          <div class="sys-card"><span class="sys-card-dot"></span>Real-time monitoring of aviation fuel inventory</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Accurate fuel flow measurement for operational control</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Leak detection across hydrant valve vaults</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Redundant DCS architecture for high system availability</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Centralized SCADA monitoring for fuel farm operations</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Scalable automation platform for future airport expansion</div>
         </div>
       </div>
 
-      <!-- Scope of Work -->
-      <div>
-        <div class="section-label text-lg">Scope of Work</div>
-        <ul class="space-y-2">
-          <li class="flex items-start gap-3 text-lg text-slate-600"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>Detailed automation and instrumentation design for airport fuel farm infrastructure</li>
-          <li class="flex items-start gap-3 text-lg text-slate-600"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>Engineering of aircraft fuel hydrant distribution monitoring and control systems</li>
-          <li class="flex items-start gap-3 text-lg text-slate-600"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>Specification and integration of aviation-grade instrumentation for tank gauging, flow, pressure, temperature, and leak detection</li>
-          <li class="flex items-start gap-3 text-lg text-slate-600"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>Design of Siemens PCS7 redundant DCS architecture for high availability fuel operations</li>
-          <li class="flex items-start gap-3 text-lg text-slate-600"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>Engineering of automation panels, field panels, and fiber optic PROFIBUS communication network</li>
-          <li class="flex items-start gap-3 text-lg text-slate-600"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>Remote project coordination and engineering continuity throughout the 2018 to 2023 execution period</li>
-        </ul>
+      <!-- Automation Engineering for Global Infrastructure -->
+      <div class="fade-up">
+        <div class="section-label">Automation Engineering for Global Infrastructure</div>
+        <p class="text-slate-600 text-lg leading-relaxed">
+          This project highlights Watchdog Automation's capability to deliver advanced automation engineering for critical infrastructure projects, including aviation fuel systems, large-scale instrumentation deployments, and distributed control systems.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          Through expertise in process automation, industrial instrumentation, DCS architecture, and control system engineering, Watchdog Automation continues to support large infrastructure projects with high-reliability automation solutions built on world-class technology platforms.
+        </p>
       </div>
 
       <!-- Back link -->
@@ -292,7 +535,7 @@
     </div>
 
     <!-- ── SIDEBAR ── -->
-    <div class="w-full lg:w-64 shrink-0 sidebar-sticky space-y-4">
+    <div class="w-full lg:w-64 shrink-0 sidebar-sticky space-y-4 fade-up delay-200">
 
       <!-- Project details -->
       <div class="rounded-xl border border-slate-200 overflow-hidden">
@@ -331,6 +574,27 @@
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+
+<script>
+  (function () {
+    const els = document.querySelectorAll('.fade-up, .fade-left');
+    if (!els.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    els.forEach((el) => observer.observe(el));
+  })();
 </script>
 
 </body>
