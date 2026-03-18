@@ -19,6 +19,56 @@
       margin-bottom: 0.6rem;
     }
 
+    /* ── Grid card list ── */
+    .sys-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.65rem;
+    }
+    @media (max-width: 600px) {
+      .sys-grid { grid-template-columns: 1fr; }
+    }
+    .sys-card {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.6rem;
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #334155;
+      line-height: 1.4;
+    }
+    .sys-card-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #ac0505;
+      flex-shrink: 0;
+    }
+
+    /* ── Left-border pill list ── */
+    .pill-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .pill-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.65rem 1rem;
+      background: #f8fafc;
+      border-left: 3px solid #ac0505;
+      border-radius: 0 0.5rem 0.5rem 0;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: #334155;
+    }
+
+    /* ── Tech spec table ── */
     .tech-row {
       display: grid;
       grid-template-columns: 165px 1fr;
@@ -33,6 +83,8 @@
     }
     .tech-key { font-size: 0.85rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #ac0505; }
     .tech-val { font-size: 1.0625rem; color: #334155; line-height: 1.7; }
+
+    .flex-1 p { text-align: justify; }
 
     @media (min-width: 1024px) {
       .sidebar-sticky { position: sticky; top: 5.5rem; }
@@ -234,7 +286,7 @@
 
   <!-- Title -->
   <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight mb-4" style="letter-spacing:-0.02em;">
-    Distillery Automation Modernization –<br class="hidden sm:block"/> Legacy PLC Migration &amp; Control Panel Rehabilitation
+    Distillery Automation Modernization –<br class="hidden sm:block"/> Legacy PLC Migration &amp; Control Panel Rehabilitation for a Food &amp; Beverage Processing Facility
   </h1>
 
   <!-- Meta row -->
@@ -266,44 +318,74 @@
 
       <!-- Overview -->
       <div class="fade-up">
-        <div class="section-label text-lg">Project Overview</div>
+        <div class="section-label">Project Overview</div>
         <p class="text-slate-600 text-lg leading-relaxed">
-          Complete modernization of a distillery automation system involving migration from Allen-Bradley SLC500 to Siemens SIMATIC S7-1500, operator interface upgrade to Siemens Unified Comfort Panel, and full rehabilitation of the legacy control panel to improve reliability, maintainability, and long-term plant performance.
+          Watchdog Automation successfully executed a complete automation modernization project for a major Food &amp; Beverage distillation facility, replacing a legacy control platform with a high-performance Siemens automation architecture. The project addressed the challenges of obsolete hardware, limited system support, and aging control infrastructure, ensuring long-term operational reliability and improved plant performance.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          The existing automation system was built on the Allen-Bradley SLC500 platform, which had reached obsolescence and posed increasing risks related to spare parts availability, system downtime, and maintenance limitations. Our engineering team carried out a full migration of the control system to the Siemens SIMATIC S7-1500 platform, providing a modern, scalable, and future-ready automation solution.
         </p>
       </div>
 
-      <!-- Background -->
+      <!-- Software Migration -->
       <div class="fade-up">
-        <div class="section-label text-lg">Background &amp; Challenge</div>
+        <div class="section-label">Software Migration</div>
         <p class="text-slate-600 text-lg leading-relaxed">
-          The facility was operating on an obsolete Allen-Bradley SLC500 platform that posed growing risks in spare parts availability, system support, and downtime exposure. The project required full reverse engineering and software migration of the existing RSLogix 500 program into Siemens TIA Portal while preserving process sequences, interlocks, and safety logic. In parallel, the aging control panel had to be fully rebuilt using new industrial-grade components and a corrosion-resistant SS316 stainless steel enclosure suitable for harsh distillation and food processing environments.
+          A major part of the project involved reverse engineering and software migration. The original RSLogix 500 program was carefully analyzed, re-structured, and converted into Siemens TIA Portal V20, ensuring that all process logic, interlocks, and safety conditions were accurately replicated while taking advantage of the advanced capabilities of the new platform.
         </p>
       </div>
 
-      <!-- Technical Details -->
+      <!-- Operator Interface Upgrade -->
       <div class="fade-up">
-        <div class="section-label text-lg">Technical Details</div>
-        <div class="rounded-xl border border-slate-200 overflow-hidden">
-          <div class="tech-row px-4"><div class="tech-key">PLC Platform</div><div class="tech-val">Siemens SIMATIC S7-1517 / S7-1500 architecture</div></div>
-          <div class="tech-row px-4"><div class="tech-key">Legacy System</div><div class="tech-val">Allen-Bradley SLC500 with RSLogix 500 program</div></div>
-          <div class="tech-row px-4"><div class="tech-key">HMI</div><div class="tech-val">Siemens SIMATIC Unified Comfort Panel MTP1200</div></div>
-          <div class="tech-row px-4"><div class="tech-key">Integration</div><div class="tech-val">Migrated PLC logic, operator interface, control panel components, and field wiring</div></div>
-          <div class="tech-row px-4"><div class="tech-key">Communication</div><div class="tech-val">TIA Portal V20 architecture, Industrial Ethernet, hardwired digital and analog I/O</div></div>
-          <div class="tech-row px-4"><div class="tech-key">Deliverable</div><div class="tech-val">Fully modernized automation system and rehabilitated control panel with improved diagnostics and maintainability</div></div>
+        <div class="section-label">Operator Interface Upgrade</div>
+        <p class="text-slate-600 text-lg leading-relaxed">
+          To complement the PLC upgrade, the operator interface was modernized using a Siemens SIMATIC Unified Comfort Panel (MTP1200). The new HMI provides enhanced visualization, improved diagnostics, and a significantly more intuitive user experience for plant operators and maintenance personnel.
+        </p>
+      </div>
+
+      <!-- Control Panel Rehabilitation -->
+      <div class="fade-up">
+        <div class="section-label">Control Panel Rehabilitation</div>
+        <p class="text-slate-600 text-lg leading-relaxed">
+          Beyond the control system upgrade, the project included a complete rehabilitation of the automation control panel. The legacy enclosure and internal electrical components were replaced with a new industrial-grade SS316 stainless steel enclosure, specifically designed for the harsh environmental conditions typically present in distillation and food processing environments.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          All internal components — including power distribution devices, relays, terminal blocks, protection devices, and wiring systems — were replaced with new industrial-grade hardware, resulting in a fully rebuilt control panel compliant with modern industrial standards.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          The final system now operates on a high-performance Siemens S7-1517 PLC, providing substantial improvements in processing power, communication capability, diagnostics, and long-term maintainability.
+        </p>
+      </div>
+
+      <!-- Project Highlights -->
+      <div class="fade-up">
+        <div class="section-label">Project Highlights</div>
+        <div class="sys-grid">
+          <div class="sys-card"><span class="sys-card-dot"></span>Migration from Allen-Bradley SLC500 to Siemens SIMATIC S7-1500 CPU 1517</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Conversion of RSLogix 500 program to Siemens TIA Portal V20 architecture</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Deployment of Siemens MTP1200 Unified HMI for advanced plant visualization</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Complete control panel rehabilitation and modernization</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Installation of a SS316 stainless steel industrial enclosure for corrosion resistance</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Replacement of all internal electrical components and wiring</div>
+          <div class="sys-card"><span class="sys-card-dot"></span>Improved system reliability, maintainability, and spare parts availability</div>
         </div>
       </div>
 
-      <!-- Scope of Work -->
+      <!-- Engineering Value Delivered -->
       <div class="fade-up">
-        <div class="section-label text-lg">Scope of Work</div>
-        <ul class="space-y-2">
-          <li class="flex items-start gap-3 text-lg text-slate-600 fade-left delay-100"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>Migration of legacy Allen-Bradley SLC500 PLC program to Siemens SIMATIC S7-1500 platform</li>
-          <li class="flex items-start gap-3 text-lg text-slate-600 fade-left delay-200"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>Reverse engineering and conversion of RSLogix 500 logic into Siemens TIA Portal V20</li>
-          <li class="flex items-start gap-3 text-lg text-slate-600 fade-left delay-300"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>Deployment of Siemens MTP1200 Unified HMI for improved plant visualization and diagnostics</li>
-          <li class="flex items-start gap-3 text-lg text-slate-600 fade-left delay-400"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>Complete rehabilitation of automation control panel using SS316 stainless steel enclosure</li>
-          <li class="flex items-start gap-3 text-lg text-slate-600 fade-left delay-500"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>Replacement of internal electrical components including relays, terminal blocks, protection devices, and wiring</li>
-          <li class="flex items-start gap-3 text-lg text-slate-600 fade-left delay-600"><span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#ac0505] shrink-0"></span>System testing, commissioning, and final operational validation</li>
-        </ul>
+        <div class="section-label">Engineering Value Delivered</div>
+        <p class="text-slate-600 text-lg leading-relaxed">
+          This project demonstrates Watchdog Automation's capability to perform complex cross-platform PLC migrations, modernize legacy industrial systems, and deliver fully engineered control solutions aligned with current automation standards.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          The upgraded system now provides the distillery with:
+        </p>
+        <div class="pill-list mt-4">
+          <div class="pill-item">Higher automation reliability</div>
+          <div class="pill-item">Enhanced operator visibility and diagnostics</div>
+          <div class="pill-item">Reduced maintenance risks associated with obsolete equipment</div>
+          <div class="pill-item">Improved scalability for future process expansion</div>
+        </div>
       </div>
 
       <!-- Back link -->
